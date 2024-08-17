@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+    <section>
+        <div class="container" th:object="${profileData}">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        </h1>
+                        <img src="" class="show-profile-photo" th:src="@{'/Img/'+${profileData.image}}"
+                            alt="profile photo">
+                        <h1 class="mt-3" th:with="name=${profileData.firstname}+' '+${profileData.secondName}"
+                            th:text="${name}"></h1>
+                        <div class="divider"></div>
+                        <table class="table">
+                            <tr>
+                                <th scope="col">#Id</th>
+                                <th th:text="${'SCMC2023'+profileData.id}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>
+                                    <samp th:text="${profileData.email}"></samp>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone</th>
+                                <td>
+                                    <samp th:text="${profileData.phone}"></samp>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Work</th>
+                                <td>
+                                    <samp th:text="${profileData.work}"></samp>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="discription mt-3">
+                            <h3 class="text-center">Description</h3>
+                            <div class="divider"></div>
+                            <p class="mt-3" th:utext="${profileData.description}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+    <section class="banner d-flex justify-content-center align-items-center">
+        <div style="text-align: center;">
+            <div th:if="${flag==true}">
+                <div>
+                    <h1 class="text-center">Let's Start !!</h1>
+                    <div class="divider"></div>
+                </div>
+                <div class="mt-5">
+                    <a th:href="@{/signup}">
+                        <button class="btn bg-primary btn-lg text-white">SignUp Here</button>
+                    </a>
+                    <a th:href="@{/signin}" style="padding-left: 50px;">
+                        <button class="btn bg-primary btn-lg text-white">Login Here</button>
+                    </a>
+                </div>
+            </div>
+            <div th:if="${flag==false}">
+                <h1 style="font-weight: bold;">Smart Contact Management
+                    <h1>
+                        <h5>
+                            Start collecting your contacts in very smarter way. We provide very
+                            efficient and smarter way of handling contacts.
+                        </h5>
+                    </h1>
+                </h1>
+                <form th:action="@{/let-start}">
+                    <button class="btn bg-primary btn-lg text-white">Get Start</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

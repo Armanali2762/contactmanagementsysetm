@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Contacts</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">phone</th>
+                            <th scope="col">Work</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="data:${contacts}">
+                            <th th:text="${'SCM2023'+data.id}"></th>
+                            <td>
+                                <img th:src="@{'/Img/'+${data.image}}"
+                                    style="height: 30px; width: 30px; object-fit: cover; border-radius: 50%;">
+                                <span th:with="name=${data.firstname}+' '+${data.secondName}" th:text="${name}"></span>
+                            </td>
+                            <td> 
+                                <a th:text="${data.email}" th:href="@{'/user/showProfile/'+${data.id}}"></a>
+                            </td>
+                            <td th:text="${data.phone}"></td>
+                            <td th:text="${data.work}"></td>
+                            <td>
+                                <form th:action="@{'/user/update/' + ${data.id}}" method="post" enctype="multipart">
+                                    <button class="btn btn-danger btn-sm" type="submit">
+                                        <span class="fa-solid fa-pen " style="color: #ffffff;"></span>
+                                    </button>
+                                </form>
+                                <button th:onclick="deleteContact([[${data.id}]])" class="btn btn-danger btn-sm mt-1">
+                                    <a class="fa-solid fa-trash" style="color: #ffffff"></a>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul th:if="${totlepage!=0}" class="pagination">
+                        <li th:if="${currpage>0}" class="page-item"><a class="page-link"
+                                th:href="@{${currpage-1}}">Previous</a></li>
+                        <li th:classappend="${currpage==i-1} ? 'active' : '' "
+                            th:each="i:${#numbers.sequence(1, totlepage)}" class="page-item"><a
+                                th:href="@{'/user/showcontact/'+${i-1}}" class="page-link"><span
+                                    th:text="${i}"></span></a></li>
+                        <li th:if="${totlepage-1>currpage}" class="page-item">
+                            <a class="page-link" th:href="@{${currpage+1}}">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

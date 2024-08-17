@@ -1,0 +1,149 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background: #e2e2e2;
+}
+
+.nav-color {
+    background: #009688;
+}
+
+#nav-font-color {
+    padding-left: 75%;
+}
+
+#nav-font-color li a {
+    color: white;
+}
+
+#padding-for-links{
+    padding-left: 70%;
+}
+
+#padding-for-links a {
+    color: #ffffff;
+}
+
+.banner {
+    width: 100%;
+    height: 93vh;
+    background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(../Img/home.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.form-group {
+    padding-top: 10px;
+}
+
+.my-card {
+    padding: 20px;
+    background: white;
+}
+
+#btn {
+    padding-top: 10px;
+}
+
+.bold {
+    font-weight: 1.5rem;
+    font-style: oblique;
+}
+
+.signup {
+    background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(../Img/registator.jpg);
+    background-size: cover;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.signin {
+   /* // background-color: #17a2b8; */
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(../Img/login2.jpg);
+    background-size: cover;
+}
+#for-space {
+    padding-top: 3%;
+}
+.error-template {padding: 80px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+.error-container {
+    padding-top: 10%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 18%;
+    background: #ffffff;
+    height: 100%;
+    position: fixed;
+} 
+.sidebar a {
+    display: block;
+    padding: 17px 25px;
+    text-decoration: none;
+    color: gray;
+}
+.sidebar a:hover {
+    background: #e2e2e2;
+
+}
+.divider {
+    height: .5px;
+    width: 100%;
+    background: #e2e2e2;
+}
+
+.cross-btn {
+    position: absolute;
+    padding-left: 35px;
+    top: 0;
+    right: 35px;
+    font-size: 36px;
+    cursor: pointer;
+}
+.content {
+    margin-top: 5%;
+    margin-right: 1%;
+    margin-left: 20%;
+}
+.show-profile-photo {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    text-align: center;
+}
+.deleteImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* for about */
+.about {
+    width: 100%;
+    height: 93vh;
+    background:url(../Img/about2.png);
+    background-size: cover;
+    color: white;
+}
+.about-paragraph {
+ margin: 1% 1% 1% 1%;
+}
+.about-para {
+    padding-top: 10px;
+    margin-right: 720px;
+    margin-left: 299px;
+    padding-top: 279px;
+    margin-bottom: 200px;
+
+}
+.strt-login-signin {
+   margin-right: 2px;
+}
